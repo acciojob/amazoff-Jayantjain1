@@ -7,7 +7,13 @@ public class Order {
 
     public Order(String id, String deliveryTime) {
         this.id = id;
-        this.deliveryTime = Integer.parseInt(deliveryTime);
+
+        String hr = deliveryTime.substring(0,2);
+        String min = deliveryTime.substring(3,5);
+        int hour = Integer.parseInt(hr);
+        int minutes = Integer.parseInt(min);
+        int totalTime = (hour*60) + minutes;
+        this.deliveryTime = totalTime;
         // The deliveryTime has to converted from string to int and then stored in the attribute
         //deliveryTime  = HH*60 + MM
     }
