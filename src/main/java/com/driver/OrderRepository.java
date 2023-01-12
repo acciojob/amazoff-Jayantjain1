@@ -145,6 +145,7 @@ public class OrderRepository {
             for (Order order : list){
                 if(order.getId().equals(orderId)){
                     list.remove(order);
+                    deliveryPartnerHashMap.get(key).setNumberOfOrders(list.size());
                 }
             }
         }
